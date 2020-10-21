@@ -63,19 +63,29 @@ body {
     width: 80%;
     text-align: center;
 }
-#timer-track {
+#timer-ans-track,
+#timer-clue-track {
     height: 15px;
     width: 100%;
     background: var(--prim-dark);
+    margin-bottom: 10px;
 }
-#timer-bar {
+#timer-ans-bar,
+#timer-clue-bar {
     height: 100%;
     width: 0%;
+    background: var(--high-A);
+}
+#timer-ans-num,
+#timer-clue-num {
+    padding: 20px;
+    color: var(--high-A);
+}
+
+#timer-clue-bar {
     background: var(--high-B);
 }
-#timer-num {
-    padding: 20px;
-
+#timer-clue-num {
     color: var(--high-B);
 }
 
@@ -194,11 +204,7 @@ button:active {
     display: inline-block;
 }
 
-
-#content {
-    display: none;
-}
-#startmenu, #endmenu {
+#startmenu, #waitmenu, #endmenu {
     position: absolute;
     float: left;
     
@@ -212,7 +218,7 @@ button:active {
 
     box-shadow: 0px 1px 2px 3px var(--prim-dark);
 }
-#endmenu {
+#content, #waitmenu, #endmenu {
     display: none;
 }
 .error {
