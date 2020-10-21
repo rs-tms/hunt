@@ -287,7 +287,9 @@ const setup = time => {
         , C1)
         .add_clue(
             `make things with bricks`
-        , C2);
+        , C2)
+        .set_answer("THE LEGO MOVIE")
+        .set_time(I);
 
     sman.add_stage()
         .set_question(
