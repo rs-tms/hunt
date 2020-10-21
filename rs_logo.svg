@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="200px" height="200px" viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg">
+    <style>
+        :root {
+            --prim-dark: #101010;
+            --prim-med: #0F0F0F;
+            --prim: #1F1F1F;
+            --secondary: #2A2A2A;
+            
+            --high-A: #FF0077;
+            --high-A-dark: #FF0066;
+            --high-B: #00AAAA;
+            --high-B-dark: #00A0A0;
+
+            --text: #F8F8F8;
+            --text-dark: #AAAAAA;
+        }    
+        .text {
+            font-size: 12px;
+        }
+        .box {
+            fill: var(--high-A);
+        }
+    </style>
+
+    <rect class="box" x="25" y="25" rx="3px" 
+        width="100" height="100" 
+        stroke-width="1" 
+        stroke="var(--dark)"/>
+
+    <ellipse cx="75" cy="75" 
+        rx="45" ry="45" 
+        stroke-width="1.5" 
+        fill="var(--text)" 
+        stroke="var(--high-B-dark)"/>
+    <text class="text" 
+        x="75" y="70" 
+        fill="var(--high-A)">
+        Round
+    </text>
+    <text class="text" 
+        x="75" y="83" 
+        fill="var(--high-A)">
+        Square
+    </text>
+
+    <text class="text" 
+        x="75" y="143" 
+        fill="var(--text)" 
+        text-anchor="middle">
+        Scavenger Hunt
+    </text>
+</svg>
