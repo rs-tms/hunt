@@ -118,7 +118,7 @@ class Stage {
             const t_c = format_time(time - (T - this.entry_time));
 
             const c = `${this.clue_count + 1} of ${this.clues.length}`
-            timer.clue.num.innerHTML = `Clue ${c}, in ${t_c}`;
+            timer.clue.num.innerHTML = `Extra clue ${c}, in ${t_c}`;
             
             timer.clue.track.style.display = "inline-block";
         
@@ -255,7 +255,9 @@ const format_time = milli => {
 
 let sman;
 const setup = time => {
-    let C = convert_time(2, 00);
+    let C1 = convert_time(2, 00);
+    let C2 = convert_time(3, 30);
+    
     let I = convert_time(5, 00);
 
     //Im not getting paid so i dont have time to encrypt it properly, 
@@ -277,6 +279,18 @@ const setup = time => {
 
     sman.add_stage()
         .set_question(
+            `I am small and I am tasked with defeating an 
+            evil boss. Which movie am I in`
+        )
+        .add_clue(
+            `The villain's evil weapon is a Super Glue`
+        , C1)
+        .add_clue(
+            `make things with bricks`
+        , C2);
+
+    sman.add_stage()
+        .set_question(
             `A movie where genetics and a machine are the 
             key to unlocking the memories of past ancestors
             in order to locate ancient artifacts. What was 
@@ -286,7 +300,7 @@ const setup = time => {
         .add_clue(
             `The movie’s main protagonist was also in the 
             same set of movies as James McAvoy`
-            , C)
+        , C1)
         .set_answer(answers.shift(), "Assassin’s Creed")
         .set_time(I);
 
@@ -300,7 +314,7 @@ const setup = time => {
         .add_clue(
             `The film adaptation of the novel stars Kevin
             from How I Met Your Mother`
-            , C)
+        , C1)
         .set_answer(answers.shift(), "The Namesake – First Book")
         .set_time(I);
 
@@ -310,8 +324,8 @@ const setup = time => {
             me my power. I (the character) have also 
             appeared in 9 other movies. Which movie am I in?`
         )
-        .add_clue(`My mentor was killed by my clone in this movie`, C)
-        .add_clue(`This actor has played this role for 17 years`, 2 * C)
+        .add_clue(`My mentor was killed by my clone in this movie`, C1)
+        .add_clue(`This actor has played this role for 17 years`, C2)
         .set_answer(answers.shift())
         .set_time(I);
 
@@ -324,7 +338,7 @@ const setup = time => {
         .add_clue(
             `The King of Pop has me to thank for his 
             signature dance move involving his legs`
-            , C)
+        , C1)
         .set_answer(answers.shift())
         .set_time(I);
 
@@ -339,7 +353,7 @@ const setup = time => {
             `One of the protagonists in this movie is 
             the brother of the Pulp Fiction character 
             Vincent Vega`
-            , C)
+        , C1)
         .set_answer(answers.shift(), "Movie – Reservoir Dogs")
         .set_time(I);
 
@@ -363,10 +377,10 @@ const setup = time => {
                 picture-in-picture" 
                 allowfullscreen>
             </iframe>`
-            , C)
+        , C1)
         .add_clue(
             `Use the name of the corners to correlate it to a track`
-        , 2 * C)
+        , C2)
         .set_answer(answers.shift())
         .set_time(I);
 
@@ -378,7 +392,7 @@ const setup = time => {
         .add_clue(
             `Took part in a competition I did, 
             in a state close to Illinois.`
-        , C)
+        , C1)
         .set_answer(answers.shift())
         .set_time(I);
 
@@ -392,8 +406,10 @@ const setup = time => {
         .add_clue(
             `This movie’s director is also famous for his 
             work on one of the Twilight Saga films.`
-        , C)
-        .add_clue(`The movie has a similar format to Minecraft Story Mode`, 2 * C)
+        , C1)
+        .add_clue(
+            `The movie has a similar format to Minecraft Story Mode`
+        , C2)
         .set_answer(answers.shift())
         .set_time(I);
 
@@ -407,7 +423,7 @@ const setup = time => {
         )
         .add_clue(
             `This movie stars Taron Egerton and Colin Firth`
-        , 2 * C)
+        , C1)
         .set_answer(answers.shift(),
             `Kingsman: The Golden Circle 
             <br>Country Roads 
