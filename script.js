@@ -118,7 +118,7 @@ class Stage {
             const t_c = format_time(time - (T - this.entry_time));
 
             const c = `${this.clue_count + 1} of ${this.clues.length}`
-            timer.clue.num.innerHTML = `Extra clue ${c}, in ${t_c}`;
+            timer.clue.num.innerHTML = `Extra Clue ${c}, in ${t_c}`;
             
             timer.clue.track.style.display = "inline-block";
         
