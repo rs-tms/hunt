@@ -20,6 +20,10 @@
     text-decoration: none;
 }
 
+a {
+    color: var(--high-A);
+}
+
 html,
 body {
     margin: 0;
