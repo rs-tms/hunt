@@ -146,7 +146,8 @@ class Stage {
             }
         }
         else if (P > 1) {
-            timer.ans.track.display = "none";
+            timer.ans.track.style.display = "none";
+            timer.ans.num.innerText = "";
             this.display_answer();
         }
 
@@ -254,8 +255,8 @@ const format_time = milli => {
 
 let sman;
 const setup = time => {
-    let C = convert_time(0, 10);
-    let I = convert_time(0, 20);
+    let C = convert_time(2, 00);
+    let I = convert_time(5, 00);
 
     //Im not getting paid so i dont have time to encrypt it properly, 
     //this will do to deter the average person
