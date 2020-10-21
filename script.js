@@ -279,20 +279,6 @@ const setup = time => {
 
     sman.add_stage()
         .set_question(
-            `I am small and I am tasked with defeating an 
-            evil boss. Which movie am I in`
-        )
-        .add_clue(
-            `The villain's evil weapon is a Super Glue`
-        , C1)
-        .add_clue(
-            `make things with bricks`
-        , C2)
-        .set_answer("THE LEGO MOVIE")
-        .set_time(I);
-
-    sman.add_stage()
-        .set_question(
             `A movie where genetics and a machine are the 
             key to unlocking the memories of past ancestors
             in order to locate ancient artifacts. What was 
