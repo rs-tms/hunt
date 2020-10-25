@@ -29,6 +29,7 @@ class Stage {
         this.begin_time = begin_time;
         this.entry_time = this.begin_time;
 
+        this.hide_time(false);
         this.set_time();
         this.set_answer();
         this.set_question();
@@ -36,8 +37,13 @@ class Stage {
         this.clues = [];
         this.clue_count = 0;
     }
+    hide_time(hide = true) {
+        this.hide = hide;
+        return this;
+    }
     set_time(time = 0) {
         this.time = time;
+        return this;
     }
     set_answer(data = null, exp = "") {
         this.answer = data;
@@ -133,16 +139,18 @@ class Stage {
 
         let P = (T - this.begin_time) / this.time;
         if (P <= 1) {
-            const t_a = format_time(this.get_end() - T);
-            timer.ans.num.innerHTML = `Answer in ${t_a}`;
-
-            if(P < 0){
-                timer.ans.track.style.display = "none";
-                timer.ans.bar.style.width = "100%";        
-            }
-            else {
-                timer.ans.track.style.display = "inline-block";
-                timer.ans.bar.style.width = `${100 * clamp(P, 0, 1)}%`;        
+            if(!this.hide){
+                const t_a = format_time(this.get_end() - T);
+                timer.ans.num.innerHTML = `Answer in ${t_a}`;
+    
+                if(P < 0){
+                    timer.ans.track.style.display = "none";
+                    timer.ans.bar.style.width = "100%";        
+                }
+                else {
+                    timer.ans.track.style.display = "inline-block";
+                    timer.ans.bar.style.width = `${100 * clamp(P, 0, 1)}%`;        
+                }    
             }
         }
         else if (P > 1) {
@@ -417,7 +425,8 @@ const setup = time => {
             <br>Country Roads 
             <br>John Denver`
         )
-        .set_time(I);
+        .set_time(convert_time(20, 0))
+        .hide_time(true);
 
     sman.start_game();
 }
